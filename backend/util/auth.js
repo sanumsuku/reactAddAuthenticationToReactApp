@@ -17,6 +17,7 @@ function isValidPassword(password, storedPassword) {
 }
 
 function checkAuthMiddleware(req, res, next) {
+  console.log(req);
   if (req.method === 'OPTIONS') {
     return next();
   }

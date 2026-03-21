@@ -1,8 +1,15 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useRouteLoaderData } from 'react-router-dom';
 
 import classes from './EventsNavigation.module.css';
 
+// import {isLoggedIn} from "../util/Auth"
+
 function EventsNavigation() {
+  
+  // const signedIn = isLoggedIn();
+
+  const signedIn = useRouteLoaderData('root');
+
   return (
     <header className={classes.header}>
       <nav>
@@ -18,7 +25,7 @@ function EventsNavigation() {
               All Events
             </NavLink>
           </li>
-          <li>
+          {signedIn && <li>
             <NavLink
               to="/events/new"
               className={({ isActive }) =>
@@ -27,7 +34,8 @@ function EventsNavigation() {
             >
               New Event
             </NavLink>
-          </li>
+          </li>}
+          
         </ul>
       </nav>
     </header>

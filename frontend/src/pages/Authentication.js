@@ -1,6 +1,6 @@
 import {redirect} from "react-router-dom";
 import AuthForm from '../components/AuthForm';
-
+import { setAuthToken } from "../util/Auth";
 function AuthenticationPage() {
   return <AuthForm />;
 }
@@ -34,6 +34,8 @@ export const action = async ({request}) => {
       body: JSON.stringify(authData)
     });
 
+    // console.log(await response.json());
+
   if(response.status===422 || response.status===401){
     return response;
   }
@@ -44,6 +46,14 @@ export const action = async ({request}) => {
     }, {status:500});
   }
 
-  return redirect('/');
-
+  const result = await response.json();
+  if(result && result.token){
+    setAuthToken(result.token);
+    return redirect('/');
+  }
+  else{
+    throw new Response({
+      message: 'Auth Token..... Mooo..... !!!'
+    }, {status:500});
+  }
 }

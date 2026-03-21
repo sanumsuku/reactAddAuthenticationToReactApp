@@ -7,19 +7,24 @@ import EventDetailPage, {
   action as deleteEventAction,
 } from '../pages/EventDetail';
 import EventsPage, { loader as eventsLoader } from '../pages/Events';
-import EventsRootLayout from '../pages/EventsRoot';
+import EventsRootLayout from '../layouts/EventsRoot';
 import HomePage from '../pages/Home';
 import NewEventPage from '../pages/NewEvent';
-import RootLayout from '../pages/Root';
+import RootLayout from '../layouts/Root';
 import { action as manipulateEventAction } from '../components/EventForm';
 import NewsletterPage, { action as newsletterAction } from '../pages/Newsletter';
 import AuthenticationPage, {action as AuthAction} from "../pages/Authentication";
 
+import {action as LogoutAction} from "../pages/Logout";
+import { isLoggedIn, checkAuthLoader } from "../util/Auth"; 
+
 const Routes = createBrowserRouter([
   {
     path: '/',
+    id: 'root',
     element: <RootLayout />,
     errorElement: <ErrorPage />,
+    loader: isLoggedIn,
     children: [
       { index: true, element: <HomePage /> },
       {
@@ -50,6 +55,7 @@ const Routes = createBrowserRouter([
                 path: 'edit',
                 element: <EditEventPage />,
                 action: manipulateEventAction,
+                loader: checkAuthLoader
               },
             ],
           },
@@ -57,6 +63,7 @@ const Routes = createBrowserRouter([
             path: 'new',
             element: <NewEventPage />,
             action: manipulateEventAction,
+            loader: checkAuthLoader
           },
         ],
       },
@@ -65,6 +72,10 @@ const Routes = createBrowserRouter([
         element: <NewsletterPage />,
         action: newsletterAction,
       },
+      {
+        path: 'logout',
+        action: LogoutAction
+      }
     ],
   },
 ]);

@@ -1,18 +1,1 @@
-{
-  "events": [
-    {
-      "title": "A new event",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/M%C3%BCnchen_Panorama.JPG/1024px-M%C3%BCnchen_Panorama.JPG",
-      "date": "2022-10-01",
-      "description": "Some awesome event!",
-      "id": "2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
-    }
-  ],
-  "users": [
-    {
-      "email": "s@s.com",
-      "password": "$2a$12$VeKPECcPj7pqtPABqy2HmOWWOJrnuLyJHHPa.ryksFG0TCLEUa23u",
-      "id": "45c80680-9316-443f-a322-ace7ae53054c"
-    }
-  ]
-}
+{"events":[{"title":"A new event 4 ","image":"https://al-sharq.com/get/maximage/20220924_1663995833-240.jpg?t=1663995833","date":"2022-10-01","description":"Some awesome event!","id":"2a42fcc4-ea21-4bdd-abf6-c40006dc66a92"},{"title":"A new event 3","image":"https://al-sharq.com/get/maximage/20220924_1663995833-240.jpg?t=1663995833","date":"2022-10-01","description":"Some awesome event!","id":"2a42fcc4-ea21-4bdd-abf6-c40006dc66a93"},{"title":"A new event 2","image":"https://al-sharq.com/get/maximage/20220924_1663995833-240.jpg?t=1663995833","date":"2022-10-01","description":"Some awesome event!","id":"2a42fcc4-ea21-4bdd-abf6-c40006dc66a94"},{"title":"A new event 1","image":"https://al-sharq.com/get/maximage/20220924_1663995833-240.jpg?t=1663995833","date":"2022-10-01","description":"Some awesome event!","id":"2a42fcc4-ea21-4bdd-abf6-c40006dc66a95"}],"users":[{"email":"s@s.com","password":"$2a$12$VeKPECcPj7pqtPABqy2HmOWWOJrnuLyJHHPa.ryksFG0TCLEUa23u","id":"45c80680-9316-443f-a322-ace7ae53054c"},{"email":"s1@s.com","password":"$2a$12$.9de6A6OHWfecohwCwntHeW6R8g.bOPfIFGI8VBAHd3Fti7omNU62","id":"9baae530-908c-49e2-a751-112af5e833d0"}]}
